@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "Plus Jakarta Sans", "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-brutal-black: #080809;
+  --color-brutal-white: #FFFFFF;
+  --color-brutal-neon: #39FF14;
+  --color-brutal-blue: #2D5BFF;
+  --color-brutal-gray: #121214;
+}
+
+:root {
+  --background: oklch(0.04 0.01 250);
+  --foreground: oklch(0.98 0.01 250);
+  --card: oklch(0.09 0.01 250);
+  --card-foreground: oklch(0.98 0.01 250);
+  --border: oklch(0.18 0.01 250);
+  --radius: 24px;
+}
+
+@layer base {
+  body {
+    background-color: #070708;
+    color: #F3F4F6;
+    font-family: var(--font-sans);
+  }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: fit-content;
+  animation: marquee 20s linear infinite;
+}
