@@ -5,7 +5,7 @@
 
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-const avatarImg = "/src/assets/images/jeffrey_avatar_new.jpg";
+import avatarImg from "./assets/images/jeffrey_avatar_new.jpg";
 import { 
   Github, 
   Linkedin, 
