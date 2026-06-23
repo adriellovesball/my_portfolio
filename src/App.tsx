@@ -56,7 +56,7 @@ const PROJECTS = [
     short: "Interactive web music player.",
     description: "A sleek and responsive web music player application featuring an intuitive interface and smooth audio playback controls.",
     tech: ["React.js", "Audio API", "Tailwind CSS"],
-    image: "https://picsum.photos/seed/musicplayer/800/600",
+    image: "https://iad.microlink.io/HPAtNheCPm89_hs42wc6pDdxYhCx34lI7D9_jmCO_H2NN1KfZlHkrkxZufcPQE8JbaPcWzq6otW9mhD-yNTVRg.png",
     color: "bg-[#2D5BFF]",
     link: "https://cray-wave.vercel.app"
   },
