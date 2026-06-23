@@ -51,13 +51,14 @@ import { Button } from "@/components/ui/button";
 
 const PROJECTS = [
   {
-    id: "algo-playground",
-    title: "Algorithmic Visualizer",
-    short: "Interactive CS algorithm visualizer.",
-    description: "A gorgeous frontend simulation modeling classic sorting, pathfinding, and graph search algorithms. Built to make core computer science concepts tactile and understandable.",
-    tech: ["React.js", "TypeScript", "Tailwind CSS"],
-    image: "https://picsum.photos/seed/visualizer/800/600",
-    color: "bg-[#2D5BFF]"
+    id: "web-music-player",
+    title: "Web Music Player",
+    short: "Interactive web music player.",
+    description: "A sleek and responsive web music player application featuring an intuitive interface and smooth audio playback controls.",
+    tech: ["React.js", "Audio API", "Tailwind CSS"],
+    image: "https://picsum.photos/seed/musicplayer/800/600",
+    color: "bg-[#2D5BFF]",
+    link: "https://cray-wave.vercel.app"
   },
   {
     id: "weather-rest",
@@ -634,9 +635,19 @@ export default function App() {
                 {selectedProject.description}
               </p>
 
-              <div className="flex gap-4">
+              <div className="flex flex-wrap gap-4">
+                {selectedProject.link && (
+                  <a 
+                    href={selectedProject.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center justify-center flex-1 h-12 bg-white text-black font-extrabold text-sm rounded-xl cursor-pointer hover:bg-stone-200 transition-colors"
+                  >
+                    Visit Live Site
+                  </a>
+                )}
                 <a 
-                  href="mailto:jeffadr46@gmail.com?subject=Regarding%20your%20Project:%20_title_"
+                  href={`mailto:jeffadr46@gmail.com?subject=Regarding%20your%20Project:%20${encodeURIComponent(selectedProject.title)}`}
                   className="inline-flex items-center justify-center flex-1 h-12 bg-[#39FF14] text-black font-extrabold text-sm rounded-xl cursor-pointer hover:bg-[#34e012] transition-colors"
                 >
                   Inquire Project Details
