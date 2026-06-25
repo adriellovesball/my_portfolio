@@ -6,15 +6,15 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import avatarImg from "./assets/images/jeffrey_avatar_new.jpg";
-import { 
-  Github, 
-  Linkedin, 
-  Mail, 
-  ExternalLink, 
-  Layout, 
-  Palette, 
-  Zap, 
-  Layers, 
+import {
+  Github,
+  Linkedin,
+  Mail,
+  ExternalLink,
+  Layout,
+  Palette,
+  Zap,
+  Layers,
   ArrowRight,
   Plus,
   ArrowUpRight,
@@ -112,7 +112,7 @@ export default function App() {
   const [selectedProject, setSelectedProject] = useState<typeof PROJECTS[0] | null>(null);
   const [contactOpen, setContactOpen] = useState(false);
   const [copiedEmail, setCopiedEmail] = useState(false);
-  
+
   // Local message state
   const [senderName, setSenderName] = useState("");
   const [senderMessage, setSenderMessage] = useState("");
@@ -130,7 +130,7 @@ export default function App() {
       };
       setTime(new Date().toLocaleTimeString("en-US", options));
     };
-    
+
     updateTime();
     const interval = setInterval(updateTime, 1000);
     return () => clearInterval(interval);
@@ -159,7 +159,7 @@ export default function App() {
   return (
     <div id="bento-root" className="min-h-screen bg-[#070708] text-[#F3F4F6] p-4 sm:p-6 md:p-12 lg:p-16 flex flex-col justify-center items-center">
       <div className="max-w-[1000px] w-full space-y-6">
-        
+
         {/* Top Header Marquee Bar */}
         <div id="status-marquee" className="w-full flex flex-col sm:flex-row justify-between items-center bg-[#121214] border border-[#1e1e22] rounded-[1.25rem] px-5 py-3 gap-3 md:gap-0">
           <div className="flex items-center gap-2.5">
@@ -181,9 +181,9 @@ export default function App() {
 
         {/* TOP ROW: Profile picture and intro summary */}
         <div id="bento-hero-row" className="grid grid-cols-1 md:grid-cols-12 gap-6">
-          
+
           {/* Avatar Card (Left) */}
-          <motion.div 
+          <motion.div
             whileHover={{ y: -4, scale: 1.01 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
             className="md:col-span-4 bg-[#121214] border border-[#1e1e22] rounded-[2rem] p-6 flex flex-col items-center justify-center text-center group relative overflow-hidden"
@@ -192,9 +192,9 @@ export default function App() {
               Web Dev
             </div>
             <div className="w-40 h-40 rounded-[2.5rem] overflow-hidden border-2 border-[#1e1e22] mb-5 bg-[#1c1c1f] relative group-hover:border-[#39FF14] transition-colors duration-300">
-              <img 
-                src={avatarImg} 
-                alt="Jeffrey Adriel" 
+              <img
+                src={avatarImg}
+                alt="Jeffrey Adriel"
                 className="w-full h-full object-cover opacity-90 hover:scale-105 transition-transform duration-500"
                 referrerPolicy="no-referrer"
               />
@@ -206,25 +206,25 @@ export default function App() {
               Front-End Engineer
             </p>
             <div className="flex gap-2.5 mt-5">
-              <a 
-                href="https://github.com/jeffadr46" 
-                target="_blank" 
+              <a
+                href="https://github.com/adriellovesball"
+                target="_blank"
                 rel="noreferrer"
                 className="w-9 h-9 flex items-center justify-center rounded-full bg-[#1c1c1f] hover:bg-white hover:text-black border border-[#28282d] transition-all"
                 title="GitHub"
               >
                 <Github className="w-4.5 h-4.5" />
               </a>
-              <a 
-                href="https://linkedin.com/in/jeffrey-adriel-oleabhie" 
-                target="_blank" 
+              <a
+                href="https://linkedin.com/in/jeffrey-oleabhie-b1529a405"
+                target="_blank"
                 rel="noreferrer"
                 className="w-9 h-9 flex items-center justify-center rounded-full bg-[#1c1c1f] hover:bg-white hover:text-black border border-[#28282d] transition-all"
                 title="LinkedIn"
               >
                 <Linkedin className="w-4.5 h-4.5" />
               </a>
-              <button 
+              <button
                 onClick={() => setContactOpen(true)}
                 className="w-9 h-9 flex items-center justify-center rounded-full bg-[#1c1c1f] hover:bg-[#39FF14] hover:text-black hover:border-transparent border border-[#28282d] transition-all cursor-pointer"
                 title="Contact Mail"
@@ -235,7 +235,7 @@ export default function App() {
           </motion.div>
 
           {/* Intro description bento card (Right) */}
-          <motion.div 
+          <motion.div
             whileHover={{ y: -4, scale: 1.01 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
             className="md:col-span-8 bg-[#121214] border border-[#1e1e22] rounded-[2rem] p-8 flex flex-col justify-between relative overflow-hidden group"
@@ -259,7 +259,7 @@ export default function App() {
               </span>
               <div className="flex flex-wrap gap-2">
                 {["🎮 Computer Gaming", "💻 Coding & Tech", "🧠 Problem Solving", "🔍 Technical Research", "🏀 Basketball"].map((h) => (
-                  <span 
+                  <span
                     key={h}
                     className="text-xs bg-[#19191c] border border-[#232328] font-medium text-stone-300 px-3.5 py-1.5 rounded-full"
                   >
@@ -274,9 +274,9 @@ export default function App() {
 
         {/* MIDDLE ROW: Experience Cards */}
         <div id="bento-experience-section" className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          
+
           {/* Experience Card 1 - Entry level */}
-          <motion.div 
+          <motion.div
             whileHover={{ y: -4 }}
             className="bg-[#121214] border border-[#1e1e22] rounded-[2rem] p-8 relative overflow-hidden group"
           >
@@ -293,7 +293,7 @@ export default function App() {
                 Available Now
               </span>
             </div>
-            
+
             <ul className="space-y-4 text-sm text-stone-400 font-sans">
               <li className="flex items-start gap-2.5">
                 <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#39FF14] shrink-0" />
@@ -311,7 +311,7 @@ export default function App() {
           </motion.div>
 
           {/* Experience Card 2 - Academic pursuits */}
-          <motion.div 
+          <motion.div
             whileHover={{ y: -4 }}
             className="bg-[#121214] border border-[#1e1e22] rounded-[2rem] p-8 relative overflow-hidden group"
           >
@@ -328,7 +328,7 @@ export default function App() {
                 Ongoing
               </span>
             </div>
-            
+
             <ul className="space-y-4 text-sm text-stone-400 font-sans">
               <li className="flex items-start gap-2.5">
                 <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#2D5BFF] shrink-0" />
@@ -344,14 +344,14 @@ export default function App() {
               </li>
             </ul>
           </motion.div>
-          
+
         </div>
 
         {/* LOWER SECTION: Tools/Skills Card (Column 1) and Education timeline (Column 2) */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-          
+
           {/* SKILLS CARD with interactive tabs (Spans 7 Cols) */}
-          <motion.div 
+          <motion.div
             whileHover={{ y: -4 }}
             className="md:col-span-7 bg-[#121214] border border-[#1e1e22] rounded-[2rem] p-8 flex flex-col justify-between"
           >
@@ -365,11 +365,10 @@ export default function App() {
                     <button
                       key={tab}
                       onClick={() => setActiveSkillTab(tab)}
-                      className={`text-[10px] font-mono uppercase tracking-wider px-3 py-1.5 rounded-full transition-all cursor-pointer ${
-                        activeSkillTab === tab 
-                          ? "bg-[#39FF14] text-black font-extrabold" 
-                          : "text-stone-400 hover:text-white"
-                      }`}
+                      className={`text-[10px] font-mono uppercase tracking-wider px-3 py-1.5 rounded-full transition-all cursor-pointer ${activeSkillTab === tab
+                        ? "bg-[#39FF14] text-black font-extrabold"
+                        : "text-stone-400 hover:text-white"
+                        }`}
                     >
                       {tab === "stack" ? "Web" : tab === "theories" ? "Core" : "Office"}
                     </button>
@@ -411,7 +410,7 @@ export default function App() {
           </motion.div>
 
           {/* EDUCATION & TIMELINE CARD (Spans 5 Cols) */}
-          <motion.div 
+          <motion.div
             whileHover={{ y: -4 }}
             className="md:col-span-5 bg-[#121214] border border-[#1e1e22] rounded-[2rem] p-8 flex flex-col justify-between"
           >
@@ -419,9 +418,9 @@ export default function App() {
               <span className="font-mono text-[10px] tracking-widest uppercase font-bold text-stone-400 block mb-6">
                 Academic Journey
               </span>
-              
+
               <div className="space-y-6 relative border-l-2 border-[#1e1e22] pl-5 ml-1">
-                
+
                 {/* School 1 */}
                 <div className="relative group/edu">
                   <div className="absolute -left-[27px] top-1 w-3 h-3 rounded-full bg-[#39FF14] border-2 border-[#121214]" />
@@ -489,9 +488,9 @@ export default function App() {
               >
                 <div>
                   <div className="aspect-[16/10] rounded-xl overflow-hidden mb-4 border border-[#242429] bg-stone-900 relative">
-                    <img 
-                      src={proj.image} 
-                      alt={proj.title} 
+                    <img
+                      src={proj.image}
+                      alt={proj.title}
                       className="w-full h-full object-cover opacity-80 group-hover:scale-105 group-hover:opacity-100 transition-all duration-500"
                     />
                     <div className="absolute top-2.5 right-2.5 flex gap-1">
@@ -535,25 +534,25 @@ export default function App() {
           </div>
 
           <div className="flex flex-wrap justify-center gap-3">
-            <a 
-              href="https://github.com/jeffadr46" 
-              target="_blank" 
+            <a
+              href="https://github.com/adriellovesball"
+              target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#1c1c1f] hover:bg-white hover:text-black border border-[#2b2b31] transition-all text-sm font-semibold cursor-pointer active:scale-95"
             >
               <Github className="w-4 h-4" />
               GitHub
             </a>
-            <a 
-              href="https://linkedin.com/in/jeffrey-adriel-oleabhie" 
-              target="_blank" 
+            <a
+              href="https://linkedin.com/in/jeffrey-oleabhie-b1529a405"
+              target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#1c1c1f] hover:bg-white hover:text-black border border-[#2b2b31] transition-all text-sm font-semibold cursor-pointer active:scale-95"
             >
               <Linkedin className="w-4 h-4" />
               LinkedIn
             </a>
-            <button 
+            <button
               onClick={() => setContactOpen(true)}
               className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#39FF14] text-black hover:bg-[#34e012] transition-all text-sm font-extrabold cursor-pointer active:scale-95"
             >
@@ -593,19 +592,19 @@ export default function App() {
       </div>
 
       {/* FOOTER ACCENTS BLOCK & MODAL OVERLAYS */}
-      
+
       {/* 1. PROJECT SPEC LIGHTBOX MODAL */}
       <AnimatePresence>
         {selectedProject && (
           <div className="fixed inset-0 bg-black/85 z-50 flex items-center justify-center p-4 backdrop-blur-md">
-            <motion.div 
+            <motion.div
               initial={{ scale: 0.95, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
               transition={{ type: "spring", duration: 0.4 }}
               className="bg-[#121214] border border-[#232329] rounded-[2rem] max-w-xl w-full p-6 sm:p-8 relative overflow-hidden"
             >
-              <button 
+              <button
                 onClick={() => setSelectedProject(null)}
                 className="absolute top-4 right-4 w-9 h-9 flex items-center justify-center rounded-full bg-[#1c1c1f] text-stone-400 hover:text-white border border-[#2b2b31] transition-all cursor-pointer"
               >
@@ -613,9 +612,9 @@ export default function App() {
               </button>
 
               <div className="aspect-[16/10] w-full bg-stone-950 rounded-2xl overflow-hidden border border-[#1e1e22] mb-6">
-                <img 
-                  src={selectedProject.image} 
-                  alt={selectedProject.title} 
+                <img
+                  src={selectedProject.image}
+                  alt={selectedProject.title}
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -637,7 +636,7 @@ export default function App() {
 
               <div className="flex flex-wrap gap-4">
                 {selectedProject.link && (
-                  <a 
+                  <a
                     href={selectedProject.link}
                     target="_blank"
                     rel="noreferrer"
@@ -646,13 +645,13 @@ export default function App() {
                     Visit Live Site
                   </a>
                 )}
-                <a 
+                <a
                   href={`mailto:jeffadr46@gmail.com?subject=Regarding%20your%20Project:%20${encodeURIComponent(selectedProject.title)}`}
                   className="inline-flex items-center justify-center flex-1 h-12 bg-[#39FF14] text-black font-extrabold text-sm rounded-xl cursor-pointer hover:bg-[#34e012] transition-colors"
                 >
                   Inquire Project Details
                 </a>
-                <button 
+                <button
                   onClick={() => setSelectedProject(null)}
                   className="inline-flex items-center justify-center h-12 px-6 bg-[#1a1a1d] text-stone-300 hover:text-white border border-[#25252a] font-semibold text-sm rounded-xl cursor-pointer"
                 >
@@ -668,14 +667,14 @@ export default function App() {
       <AnimatePresence>
         {contactOpen && (
           <div className="fixed inset-0 bg-black/85 z-50 flex items-center justify-center p-4 backdrop-blur-md">
-            <motion.div 
+            <motion.div
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 20, opacity: 0 }}
               transition={{ type: "spring", duration: 0.4 }}
               className="bg-[#121214] border border-[#232329] rounded-[2rem] max-w-md w-full p-6 sm:p-8 relative"
             >
-              <button 
+              <button
                 onClick={() => setContactOpen(false)}
                 className="absolute top-4 right-4 w-9 h-9 flex items-center justify-center rounded-full bg-[#1c1c1f] text-stone-400 hover:text-white border border-[#2b2b31] transition-all cursor-pointer"
               >
@@ -697,29 +696,29 @@ export default function App() {
               <form onSubmit={handleSendMessage} className="space-y-4 font-sans">
                 <div>
                   <label className="block text-xs font-mono text-stone-400 uppercase tracking-wider mb-1.5 font-semibold">Your Name</label>
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     required
                     value={senderName}
                     onChange={(e) => setSenderName(e.target.value)}
-                    placeholder="Enter your name" 
+                    placeholder="Enter your name"
                     className="w-full bg-[#1a1a1d] border border-[#25252a] rounded-xl px-4 py-3 text-sm text-stone-200 placeholder-stone-600 focus:border-[#39FF14] transition-colors focus:ring-0 outline-none"
                   />
                 </div>
                 <div>
                   <label className="block text-xs font-mono text-stone-400 uppercase tracking-wider mb-1.5 font-semibold">Your Message</label>
-                  <textarea 
+                  <textarea
                     rows={4}
                     required
                     value={senderMessage}
                     onChange={(e) => setSenderMessage(e.target.value)}
-                    placeholder="Hi Jeffrey, I'd love to chat about an internship opportunity..." 
+                    placeholder="Hi Jeffrey, I'd love to chat about an internship opportunity..."
                     className="w-full bg-[#1a1a1d] border border-[#25252a] rounded-xl px-4 py-3 text-sm text-stone-200 placeholder-stone-600 focus:border-[#39FF14] transition-colors focus:ring-0 resize-none outline-none"
                   />
                 </div>
 
                 <div className="pt-2 flex flex-col gap-2">
-                  <button 
+                  <button
                     type="submit"
                     disabled={sendingState === "sent"}
                     className="w-full h-12 bg-[#39FF14] text-black font-extrabold text-sm rounded-xl flex items-center justify-center gap-2 cursor-pointer hover:bg-[#34e012] disabled:opacity-50 transition-colors"
@@ -736,7 +735,7 @@ export default function App() {
                       </>
                     )}
                   </button>
-                  <button 
+                  <button
                     type="button"
                     onClick={copyEmail}
                     className="w-full h-11 bg-transparent hover:bg-[#1a1a1d] border border-[#25252a] text-stone-300 font-semibold text-xs rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer"
